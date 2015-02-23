@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<script src="../nexusUI.js"></script>
+	</head>
+	<body>
+
+		<!-- I see only 1 to 2 ms difference between a normal onmousedown event and a nexusui event -->
+
+		<script>
+
+			function time() {
+				var d = new Date();
+				var sec = d.getMilliseconds();
+				diff = sec
+				console.log('time '+diff)
+			}
+
+			nx.onload = function() {
+
+				colors1.on('*', function() {
+					var d = new Date();
+					sec = d.getMilliseconds();
+					sec -= diff
+					console.log('diff ' + sec)
+				})
+
+			}
+
+		</script>
+
+		<canvas onmousedown="time()" onmousemove="time()" nx="colors"></canvas>
+
+
+	</body>
+</html>

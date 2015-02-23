@@ -1,0 +1,24 @@
+<html>
+	<head>
+	</head>
+	<body>
+
+		<!-- I am getting over 100 ms for this, but my timing mechanism may be poor. -->
+
+		<script>
+
+			var c = new AudioContext();
+			var a = c.createOscillator();
+			a.connect(c.destination);
+
+			function sine() {
+				a.start();
+			}
+
+		</script>
+
+		<div onmousedown="sine();" style="font-size:200px;cursor:pointer">test</div>
+
+
+	</body>
+</html>

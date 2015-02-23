@@ -1,0 +1,22 @@
+<html>
+	<head>
+	</head>
+	<body>
+
+		<!-- even this can report up to 5ms latency between function calls -->
+
+		<script>
+
+			function time() {
+				var d1 = new Date();
+				var sec = d1.getMilliseconds();
+				console.log(sec)
+			}
+
+		</script>
+
+		<div onmousedown="time();time();" style="font-size:200px">test</div>
+
+
+	</body>
+</html>
